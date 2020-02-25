@@ -29,7 +29,7 @@
 
 ### 数据结构
 - 线性表
-	- [数组](DataStructure/array)
+	- [数组](src/main/java/dataStructure/array)
     - [链表](DataStructure/List)
     - [栈](DataStructure/stack)
     - [队列](DataStructure/queue)
