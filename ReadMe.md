@@ -29,24 +29,24 @@
 
 ### 数据结构
 - 线性表
-	- [数组](DataStructure/array)
-    - [链表](DataStructure/List)
-    - [栈](DataStructure/stack)
-    - [队列](DataStructure/queue)
+	- [数组](src/main/java/dataStructure/array)
+    - [链表](src/main/java/dataStructure/List)
+    - [栈](src/main/java/dataStructure/stack)
+    - [队列](src/main/java/dataStructure/queue)
     - 跳表
     - 散列表
 - 树
-	- [二叉树](./DataStructure/BinaryTree)
+	- [二叉树](./src/main/java/dataStructure/BinaryTree)
 			- [二叉树基础（上）：什么样的二叉树适合用数组来存储？](https://time.geekbang.org/column/article/67856)
     		- [二叉树基础（下）：有了如此高效的散列表，为什么还需要二叉树？](https://time.geekbang.org/column/article/68334)
-	- [二叉搜索树](DataStructure/binarySearchTree)
-	- [平衡二叉树](DataStructure/avlTree)
-	- [红黑树](DataStructure/redBlackTree)
+	- [二叉搜索树](src/main/java/dataStructure/binarySearchTree)
+	- [平衡二叉树](src/main/java/dataStructure/avlTree)
+	- [红黑树](src/main/java/dataStructure/redBlackTree)
 			- [红黑树（上）：为什么工程中都用红黑树这种二叉树？](https://time.geekbang.org/column/article/68638)
 			- [红黑树（下）：掌握这些技巧，你也可以实现一个红黑树](https://time.geekbang.org/column/article/68976)
-	- [哈夫曼树](DataStructure/huffmanTree)
+	- [哈夫曼树](src/main/java/dataStructure/huffmanTree)
 	- 堆
-- [图](./DataStructure/Graph)
+- [图](./src/main/java/dataStructure/Graph)
     - 无向图、有向图、带权图
         - [图的表示：如何存储微博、微信等社交网络中的好友关系？](https://time.geekbang.org/column/article/70537)
 
