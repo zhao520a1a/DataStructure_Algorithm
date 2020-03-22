@@ -1,4 +1,4 @@
-package training;
+package training.cas;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author: Golden
  */
 
-public class CASDemo {
+public class CASDemo1 {
 
 
     public static void main(String[] args) {
