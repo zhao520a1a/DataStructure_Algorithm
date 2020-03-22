@@ -1,8 +1,6 @@
 package training.threads.threadpool;
 
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @Description
@@ -22,6 +20,11 @@ public class ThreadUtils {
 
 
     public static ThreadPoolExecutor getThreadPool(int poolSize, String threadNamePrefix) {
+
+        Executors.newSingleThreadExecutor();
+        Executors.newFixedThreadPool(3);
+        Executors.newCachedThreadPool();
+
         return new ThreadPoolExecutor(poolSize, poolSize, 2, TimeUnit.SECONDS, new LinkedBlockingDeque<>(30), new ThreadRenameFactory(threadNamePrefix));
     }
 
