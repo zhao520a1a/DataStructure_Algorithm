@@ -13,7 +13,6 @@ import java.util.Stack;
  * 条件一：只有在stackMin为空时，才能将stackData倒入stackMin中；
  * 条件二：在倒入时，必须一次将stackData所有元素全部倒入stackMin中；
  *
- * @author 小鑫哦
  */
 public class TwoStackQueue {
     private Stack<Integer> stackPush;

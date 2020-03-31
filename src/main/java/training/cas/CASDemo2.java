@@ -1,4 +1,4 @@
-package training;
+package training.cas;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicStampedReference;
