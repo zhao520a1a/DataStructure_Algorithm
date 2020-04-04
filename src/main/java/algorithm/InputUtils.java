@@ -69,8 +69,14 @@ public class InputUtils {
     }
 
 
-
-
+//
+//        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+//        int n = Integer.parseInt(input.readLine());
+//        String[] strings1 = input.readLine().split(" ");
+//        Node head1 = Node.createNodeList(strings1);
+//        int m = Integer.parseInt(input.readLine());
+//        String[] strings2 = input.readLine().split(" ");
+//        Node head2 = Node.createNodeList(strings2);
 
 
 }
