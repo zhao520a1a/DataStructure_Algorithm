@@ -8,7 +8,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Description 生产者消费者问题 : 判读 干活 通知
+ * @Description 生产者消费者问题 : 判断 干活 通知
  * 1. 防止虚假唤醒,判读时要在while循环中wait();
  * @author: Golden
  * @date: 2020/3/13
