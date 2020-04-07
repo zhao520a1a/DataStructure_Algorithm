@@ -59,7 +59,6 @@ public class InputUtils {
     }
 
 
-
     public static void printStack(Stack<Integer> s){
         StringBuilder sb = new StringBuilder();
         while(!s.empty()){

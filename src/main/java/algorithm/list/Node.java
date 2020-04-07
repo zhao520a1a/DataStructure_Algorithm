@@ -39,6 +39,18 @@ class Node {
         return head;
     }
 
+    public static Node createLoopNodeList(Integer[] values) {
+        Node head = new Node((values[0]));
+        Node node = head;
+        for (int i = 1; i < values.length; i++) {
+            Node newNode = new Node(values[i]);
+            node.next = newNode;
+            node = newNode;
+        }
+        node.setNext(head);
+        return head;
+    }
+
     public static Node createNodeList(String[] values) {
         Node head = new Node(Integer.parseInt(values[0]));
         Node node = head;
@@ -58,6 +70,20 @@ class Node {
             head = head.getNext();
         }
         System.out.println(sb.toString());
+    }
+
+    public static void printLoopNodeList(Node head) {
+        if (head == head.getNext()) { //只有一个节点
+            System.out.println(head.getValue());
+        } else {
+            StringBuilder sb = new StringBuilder();
+            Node last = head;
+            while (last.getNext() != head) {
+                sb.append(last.getValue()).append(" ");
+                last = last.getNext();
+            }
+            System.out.println(sb.toString());
+        }
     }
 
 

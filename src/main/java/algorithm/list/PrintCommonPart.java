@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  * @描述：打印两个升序链表的公共部分
  * @思路：
  * @复杂度：时间复杂度 O(N) (N为两个链表中较长链表的长度)
- * @链接：https://www.nowcoder.com/practice/8943eea40dbb4185b187d80fd050fee9?tpId=101&tqId=33116&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking
+ * @链接：https://www.nowcoder.com/practice/8943eea40dbb4185b187d80fd050fee9
  */
 class PrintCommonPart {
 
