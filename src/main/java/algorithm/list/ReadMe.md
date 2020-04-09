@@ -7,6 +7,8 @@
  - [MergeList（合并两个有序的单链表）](./MergeList.java)
  - [RemoveKthNode（删除链表中第K个节点）](./RemoveKthNode.java)
  - [JosephusLoop1（环形链表的约瑟夫问题）](./JosephusLoop1.java)
+ - [Palindrom（判断一个链表是否为回文结构）](./Palindrom.java)
+ - [SelectionSort（单链表的选择排序）](./SelectionSort.java)
 
 
  
