@@ -1,9 +1,5 @@
 package dataStructure.binaryTree;
 
-/**
- * 遍历二叉树
- * Created by golden on 2017/2/25 0025.
-*/
 
 public class TreeNode<T> {
    public T value;
@@ -13,6 +9,7 @@ public class TreeNode<T> {
     public TreeNode(T value) {
         this.value = value;
     }
+
     public TreeNode( ) {
     }
 

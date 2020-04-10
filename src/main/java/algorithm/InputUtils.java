@@ -53,8 +53,8 @@ public class InputUtils {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         int row = Integer.parseInt(in.readLine());
         String[] item = in.readLine().split(" ");
-        for (int i = 0; i < row; i++) {
-            //...
+        for (int i = 0; i < item.length; i++) {
+
         }
     }
 
