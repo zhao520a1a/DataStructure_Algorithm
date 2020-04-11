@@ -92,4 +92,9 @@ public class TreeUtils {
     }
 
 
+    public void printTree(TreeNode node) {
+        new IntuitivePrintTree().printTree(root);
+    }
+
+
 }

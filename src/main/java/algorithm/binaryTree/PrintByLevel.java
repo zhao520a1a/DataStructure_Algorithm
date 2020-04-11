@@ -1,68 +1,97 @@
 package algorithm.binaryTree;
 
-
 import dataStructure.binaryTree.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-
-
 /**
- * 按层打印二叉树：
- * 结果形式：
- * Level 1：1
- * Level 2：2 3
- * Level 3：4 5
- * 思路：进行宽度优先遍历，使用宽度优先队列queue存储当前层和下一层的节点信息；
- * 即：从queue的头部弹出节点node；若node有孩子，以“先左后右”的形式从尾部进入queue.
- * 难点在于换行的确定；
- * last:正在打印的当前行的最右节点
- * nlast:下一行的最右节点
- * 换行时刻：遍历到的节点==last,然后让 last=nlast
- * nlast的更新：为宽度优先队列中最新加入的节点；
- * <p>
- * Created by golden on 2017/4/1 0001.
+ * @描述：按层打印二叉树
+ * @思路：进行宽度优先遍历，使用队列queue存储当前层和下一层的节点信息； 即： 从queue的头部弹出节点node；若node有孩子，以“先左后右”的形式从尾部进入queue.
+ * @复杂度：时间O(N) 空间O(1)
+ * @链接：https://www.nowcoder.com/practice/6a1815a85bfc411d9295bc017e6b6dbe
  */
-
 public class PrintByLevel {
 
-    public static void printByLeve(TreeNode head) {
-        if (head == null) {
-            return;
+
+    //宽度优先遍历基础版
+    public static void printByLevel1(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode curr = queue.poll();
+            System.out.printf(curr.value + " ");
+            if (curr.left != null) {
+                queue.offer(curr.left);
+            }
+            if (curr.right != null) {
+                queue.offer(curr.right);
+            }
         }
-        Queue<TreeNode> queue = new LinkedList();
+    }
+
+    /*
+     * 宽度优先遍历进阶版 - 按层换行打印
+     * 如何确定换行？
+     * 记录下"当前行的最右节点last" 和 "下一行的最右节点nlast"
+     * 换行时刻：当前节点==last,然后更新last: last = nlast
+     *
+     * 结果形式：
+     * Level 1：1
+     * Level 2：2 3
+     * Level 3：4 5
+     */
+    public static void printByLevel2(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
 
         int level = 1;
-        TreeNode last = head;//初始化
-        TreeNode nLast = null;//初始化
+        TreeNode last = root; //当前行的最右节点
+        TreeNode nlast = null; //下一行的最右节点
 
-        queue.offer(head);
-        System.out.print("\nLevel " + (level++) + "：");
+        queue.offer(root);
+        System.out.print("\nLevel " + level++ + ":");
         while (!queue.isEmpty()) {
-            head = queue.poll();
-            System.out.print(head.value + " ");
-            if (head.left != null) {
-                queue.offer(head.left);
-                nLast = head.left;   //跟踪最新加入的节点
+            TreeNode curr = queue.poll();
+            System.out.print(curr.value + " ");
+
+            if (curr.left != null) {
+                queue.offer(curr.left);
+                nlast = curr.left;
             }
-            if (head.right != null) {
-                queue.offer(head.right);
-                nLast = head.right;  //跟踪最新加入的节点
+            if (curr.right != null) {
+                queue.offer(curr.right);
+                nlast = curr.right;
             }
-            if (head == last && !queue.isEmpty()) {
-                System.out.print("\nLevel " + (level++) + "：");
-                last = nLast;   //换行后的操作
+
+            //换行时刻
+            if (curr == last && !queue.isEmpty()) {
+                last = nlast;
+                System.out.print("\nLevel " + level++ + ":");
             }
+
         }
+
     }
 
+
+    /**
+     * 13
+     * /   \
+     * 65     5
+     * /  \      \
+     * 97  25     37
+     * /  / \    /
+     * 22  4  28  32
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        int[] preOrder = new int[]{1, 2, 4, 5, 3};
-        int[] inOrder = new int[]{4, 2, 5, 1, 3};
-        TreeNode root = ReConstructBinaryTree.buildTree(preOrder, 0, inOrder, inOrder.length - 1, inOrder.length);
-        new IntuitivePrintTree().printTree(root);
-        printByLeve(root);
+        Integer[] arr = {13, 65, 5, 97, 25, null, 37, 22, null, 4, 28, null, null, 32, null};
+        TreeNode root = TreeUtils.makeBinaryTreeByArray(arr);
+
+        PrintByLevel.printByLevel1(root);
+        PrintByLevel.printByLevel2(root);
     }
+
 
 }
