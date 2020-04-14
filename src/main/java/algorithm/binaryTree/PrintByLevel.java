@@ -1,5 +1,6 @@
 package algorithm.binaryTree;
 
+import algorithm.binaryTree.util.TreeUtils;
 import dataStructure.binaryTree.TreeNode;
 
 import java.util.LinkedList;
@@ -8,7 +9,7 @@ import java.util.Queue;
 /**
  * @描述：按层遍历二叉树
  * @思路：进行宽度优先遍历，使用队列queue存储当前层和下一层的节点信息； 即： 从queue的头部弹出节点node；若node有孩子，以“先左后右”的形式从尾部进入queue.
- * @复杂度：时间O(N) 空间O(1)
+ * @复杂度：时间O(w)【其中w是二叉树的宽度（拥有最多节点的层的节点数）】
  * @链接：https://www.nowcoder.com/practice/6a1815a85bfc411d9295bc017e6b6dbe
  */
 public class PrintByLevel {
@@ -48,7 +49,7 @@ public class PrintByLevel {
         TreeNode nlast = null; //下一行的最右节点
 
         queue.offer(root);
-        System.out.print("\nLevel " + level++ + ":");
+        System.out.print("Level " + level++ + " : ");
         while (!queue.isEmpty()) {
             TreeNode curr = queue.poll(); // -- 核心点
             System.out.print(curr.value + " ");
@@ -62,10 +63,10 @@ public class PrintByLevel {
                 nlast = curr.right;
             }
 
-            //换行时刻 (注：其中!queue.isEmpty()判断可忽略，这里只是为了打印好看，才加的判断)
+            //换行时刻(注：其中!queue.isEmpty()判断只是为了打印好看,可忽略)
             if (curr == last && !queue.isEmpty()) {
                 last = nlast;
-                System.out.print("\nLevel " + level++ + ":");
+                System.out.print("\nLevel " + level++ + " : ");
             }
         }
     }
@@ -82,7 +83,7 @@ public class PrintByLevel {
         int level = 1;
 
         queue.offer(root);
-        System.out.print("\nLevel " + level++ + ":");
+        System.out.print("Level " + level++ + " : ");
         while (!queue.isEmpty()) {
             int length = queue.size();  // - 核心点  区分：标识当前层和下一层的分界位置
             //换行时刻
@@ -99,7 +100,7 @@ public class PrintByLevel {
 
             //注：其中!queue.isEmpty()判断可忽略，这里只是为了打印好看，才加的判断
             if (!queue.isEmpty()) {
-                System.out.print("\nLevel " + level++ + ":");
+                System.out.print("\nLevel " + level++ + " : ");
             }
 
         }

@@ -1,7 +1,7 @@
 package algorithm.binaryTree;
 
 
-import dataStructure.binaryTree.GenerateBinaryTree;
+import algorithm.binaryTree.util.TreeUtils;
 import dataStructure.binaryTree.TreeNode;
 
 /**
@@ -50,8 +50,7 @@ public class Test {
          后序遍历：    22  97  4  28  25  65  32  37  5  13
          */
         Integer[] arr = {13, 65, 5, 97, 25, null, 37, 22, null, 4, 28, null, null, 32, null};
-        GenerateBinaryTree tree = new GenerateBinaryTree(arr);
-        TreeNode root = tree.getRoot();
+        TreeNode root = TreeUtils.makeBinaryTreeByArray(arr);
 
         Traversal traversal = new Traversal();
         System.out.println("深度遍历：");

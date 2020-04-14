@@ -1,14 +1,15 @@
 package algorithm.binaryTree;
 
+import algorithm.binaryTree.util.TreeUtils;
 import dataStructure.binaryTree.TreeNode;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 /**
- * @描述：遍历二叉树
+ * @描述：先序、中序、后序遍历二叉树
  * @思路：
- * @复杂度：
+ * @复杂度： 时间O(n) 【因为它们只访问每个节点一次，不存在多余的访问】
  * @链接： https://www.nowcoder.com/practice/566f7f9d68c24691aa5abd8abefa798c
  */
 class TraversalBinaryTree {
@@ -98,7 +99,6 @@ class Main1 {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String[] firstRow = in.readLine().split(" ");
         int row = Integer.parseInt(firstRow[0]);
-        String[] nodeValueArr = new String[row * 3];
 
         TreeNode root = TreeUtils.makeBinaryTreeByInput(in);
 //        System.out.println("先序遍历：");

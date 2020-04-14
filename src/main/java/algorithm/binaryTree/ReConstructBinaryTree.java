@@ -1,5 +1,6 @@
 package algorithm.binaryTree;
 
+import algorithm.binaryTree.util.IntuitivePrintTree;
 import dataStructure.binaryTree.TreeNode;
 
 import java.util.HashMap;
