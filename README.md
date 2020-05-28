@@ -6,7 +6,6 @@
 > 引言 ： 数据结构是为算法服务的，算法要作用在特定的数据结构之上。
 
 
- 
 ![Image](courseware/banner.png)
    
 整体结构：   
@@ -17,15 +16,17 @@
 10个算法：
 递归、排序、二分查找、搜索、哈希算法、贪心算法、分治算法、回溯算法、动态规划、字符串匹配算法
 
+#### 学习方法
 > 观点：学习的目的还是掌握，然后应用
 > - 边学边练，“适度”刷题
 > - 多问、多思考、多互动
 > - 打怪升级学习法
 > - 知识需要沉淀，不要想试图一下子掌握所有
-  
 [怎么才算真正掌握了一个数据结构或算法？](https://mp.weixin.qq.com/s/t8z4KQMrTrR3NljtWJm2zg)
 特点、复杂度、能解决的问题、应用场景;  牢固掌握原理，并能轻松代码实现。
  
+
+
 
 ### 数据结构
 - 线性表
@@ -37,30 +38,30 @@
     - 散列表
 - 树
 	- [二叉树](./src/main/java/dataStructure/BinaryTree)
-			- [二叉树基础（上）：什么样的二叉树适合用数组来存储？](https://time.geekbang.org/column/article/67856)
-    		- [二叉树基础（下）：有了如此高效的散列表，为什么还需要二叉树？](https://time.geekbang.org/column/article/68334)
 	- [二叉搜索树](src/main/java/dataStructure/binarySearchTree)
 	- [平衡二叉树](src/main/java/dataStructure/avlTree)
 	- [红黑树](src/main/java/dataStructure/redBlackTree)
-			- [红黑树（上）：为什么工程中都用红黑树这种二叉树？](https://time.geekbang.org/column/article/68638)
-			- [红黑树（下）：掌握这些技巧，你也可以实现一个红黑树](https://time.geekbang.org/column/article/68976)
+
 	- [哈夫曼树](src/main/java/dataStructure/huffmanTree)
 	- 堆
 - [图](./src/main/java/dataStructure/Graph)
     - 无向图、有向图、带权图
-        - [图的表示：如何存储微博、微信等社交网络中的好友关系？](https://time.geekbang.org/column/article/70537)
 
+
+
+#### 选型
+- [二叉树基础（上）：什么样的二叉树适合用数组来存储？](https://time.geekbang.org/column/article/67856)
+- [二叉树基础（下）：有了如此高效的散列表，为什么还需要二叉树？](https://time.geekbang.org/column/article/68334)
+- [红黑树（上）：为什么工程中都用红黑树这种二叉树？](https://time.geekbang.org/column/article/68638)
+- [红黑树（下）：掌握这些技巧，你也可以实现一个红黑树](https://time.geekbang.org/column/article/68976)
+- [图的表示：如何存储微博、微信等社交网络中的好友关系？](https://time.geekbang.org/column/article/70537)
 
 
 > 帮助文档：
 - [十大经典排序算法](https://github.com/hustcc/JS-Sorting-Algorithm)
 
 ### 算法
-
 - [复杂度分析](Algorithm/complexityAnalysis)
-
-
-
 - [排序](./Sort)
 	- 冒泡排序、插入排序、选择排序
 	- 归并排序、快速排序
@@ -130,7 +131,6 @@
 
 - [算法实战（五）：如何用学过的数据结构和算法实现一个短网址系统？](https://time.geekbang.org/column/article/80850)
 
-
 ## 推荐专栏
 ### [《数据结构与算法之美》](http://t.cn/EvWJWn4)专栏导航
  
@@ -138,29 +138,19 @@
 
 
 ###### 问题清单
-
 ## array（数组）
-
 [01. Two Sum（两数之和）](./01.TwoSum)
-
 [02. Three Sum（三数之和）](./02.ThreeSum)
-
 [03. Majority Element（在数组中出现次数超过一半的数）](./03.MajorityElement)
 
-
-
 ###### 算法题目
-
 # Two Sum（两数之和）
 **LeetCode 1**
-
 - [英文版](https://leetcode.com/problems/two-sum/)
-
 - [中文版](https://leetcode-cn.com/problems/two-sum/)
 
 ## 题目
 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那*两个*整数，并返回他们的数组下标。
-
 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
 
 示例:
@@ -170,7 +160,6 @@
 因为 nums[0] + nums[1] = 2 + 7 = 9
 所以返回 [0, 1]
 ```
-
 ## 思路
 <details>
 <summary>点击展开</summary>

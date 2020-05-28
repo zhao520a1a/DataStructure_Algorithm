@@ -16,7 +16,6 @@ import java.util.stream.LongStream;
  *
  * @Description
  * @author: Golden
- * @date: 2020/3/22
  */
 
 @AllArgsConstructor
@@ -50,9 +49,22 @@ public class ForkJoinDemo extends RecursiveTask<Long> {
     }
 
 
+    public static Long test2(long start, long end) {
+        long t3 = System.currentTimeMillis();
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        ForkJoinDemo forkJoinDemo = new ForkJoinDemo(start, end);
+        long sum2 = forkJoinPool.invoke(forkJoinDemo);
+        long t4 = System.currentTimeMillis();
+        System.out.println("ForkJoin:" + (t4 - t3) + ":" + sum2);
+        return sum2;
+    }
+
+
+
+
     public static void main(String[] args) {
         long start = 0;
-        long end = 100_0000;
+        long end = 10_0000_0000; //10亿
 
         //方法1 - 普通累计
         long t1 = System.currentTimeMillis();
@@ -61,29 +73,18 @@ public class ForkJoinDemo extends RecursiveTask<Long> {
             sum1 += i;
         }
         long t2 = System.currentTimeMillis();
-        System.out.println(t2 - t1 + ":" + sum1);
+        System.out.println("普通累计:" + (t2 - t1) + ":" + sum1);
 
+        //方法2 - 建立forkjoin任务
         test2(start,end);
 
-        //方法3  - 流式计算 （推荐）
+        //方法3  - 流式并行计算 （推荐） parallelStream
         long t5 = System.currentTimeMillis();
-        long sum3 = LongStream.rangeClosed(start, end).sum();
-        long sum4 = LongStream.rangeClosed(start, end).parallel().reduce(0,Long::sum);
+//        long sum3 = LongStream.rangeClosed(start, end).sum();
+        long sum3 = LongStream.rangeClosed(start, end).parallel().reduce(0, Long::sum);
         long t6 = System.currentTimeMillis();
-        System.out.println(t6 - t5 + ":" + sum3 +  " - " + sum4);
+        System.out.println("流式并行计算:" + (t6 - t5) + ":" + sum3);
 
-    }
-
-
-    public static Long test2(long start, long end) {
-        //方法2 - 建立forkjoin任务
-        long t3 = System.currentTimeMillis();
-        ForkJoinPool forkJoinPool = new ForkJoinPool();
-        ForkJoinDemo forkJoinDemo = new ForkJoinDemo(start, end);
-        long sum2 = forkJoinPool.invoke(forkJoinDemo);
-        long t4 = System.currentTimeMillis();
-        System.out.println(t4 - t3 + ":" + sum2);
-        return sum2;
     }
 
 

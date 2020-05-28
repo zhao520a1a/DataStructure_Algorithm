@@ -21,6 +21,9 @@ import java.util.List;
 public class StreamDemo {
 
     public static void main(String[] args) {
+
+
+        //流式计算
         List<User> list = Lists.newArrayList();
         list.add(User.builder().id(1L).name("Tomcat").age(21).build());
         list.add(User.builder().id(2L).name("Java").age(22).build());
@@ -30,7 +33,12 @@ public class StreamDemo {
         list.add(User.builder().id(6L).name("Ruby").age(26).build());
         list.add(User.builder().id(7L).name("Python").age(27).build());
 
-        list.stream().filter(user -> user.getId() % 2 == 0).filter(user -> user.getAge() > 24).map(user -> user.getName().toUpperCase()).sorted((String::compareTo)).limit(1).forEach(System.out::println);
+        list.stream().filter(user -> user.getId() % 2 == 0)
+                .filter(user -> user.getAge() > 24)
+                .map(user -> user.getName().toUpperCase())
+                .sorted((String::compareTo))
+                .limit(1).forEach(System.out::println);
+
     }
 
 

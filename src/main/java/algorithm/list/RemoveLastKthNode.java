@@ -5,12 +5,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * @描述：
- * @思路：
- * @复杂度： 时间O(n) 空间O(1)
- * @链接：
- */
 
 /**
  * @描述：在链表中删除倒数第K个节点

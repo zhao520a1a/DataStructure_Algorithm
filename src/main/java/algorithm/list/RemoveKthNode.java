@@ -6,13 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * @描述：
- * @思路：
- * @复杂度： 时间O(n) 空间O(1)
- * @链接：
- */
-
-/**
  * @描述：删除链表中第K个节点
  * @思路：链表长度为N，要删除第K个节点；最重要就是定位到它的前一个节点
  * @复杂度： 时间O(n) 空间O(1)
